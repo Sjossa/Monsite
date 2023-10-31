@@ -1,0 +1,45 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background: #093be0;
+    font-family: Arial, Helvetica, sans-serif;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+}
+
+.content {
+    padding: 125px 50px 50px;
+    background: royalblue;
+}
+
+h1 {
+    color: aqua;
+    text-align: center;
+}
+
+footer {
+    background: aqua;
+    padding: 10px;
+    font-size: 20px;
+    text-align: center;
+}
+
+nav {
+    background: aqua;
+    padding: 50px;
+    text-align: center;
+}
+
+nav a {
+    color: #0e71f2;
+    text-decoration: none;
+}
+
