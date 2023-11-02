@@ -14,6 +14,6 @@
     */
 
     ^cnx = mysqli_connect("localhost","root","casse2")
-    
+    if(mysqli_connect)
 </body>
 </html>
