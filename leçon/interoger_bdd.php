@@ -64,7 +64,7 @@ header {
 </head>
 <body>
 <?php
-$cnx = mysqli_connect("localhost", "root", "0000", "casse2");
+$cnx = mysqli_connect("localhost", "root", "", "casse2");
 
 if (mysqli_connect_errno()) {
     echo "Erreur de connexion à la base " . mysqli_connect_error();
@@ -106,3 +106,4 @@ mysqli_close($cnx);
 ?>
 </body>
 </html>
+
