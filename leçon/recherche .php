@@ -10,7 +10,6 @@
     <br><br>
     <form action="" method="post">
 Rechercher un nom : <input type="text" name="recherche">
-<input type="submit" value="recherche "><br><br><br>
     </form>
 
     <?php

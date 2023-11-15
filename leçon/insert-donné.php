@@ -8,7 +8,7 @@
 <body>
     <?php
     // Connexion à la base de données MySQL
-    $con = mysqli_connect("localhost", "root", "", "casse2");
+    $con = mysqli_connect("localhost", "root", "", "cv2");
     if (mysqli_connect_errno()) {
         echo "Erreur : " . mysqli_connect_error();
         exit(); // Quitte le script en cas d'erreur de connexion

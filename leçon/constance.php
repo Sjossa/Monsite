@@ -58,7 +58,7 @@
     if (isset($a)) {
         echo "\$a existe déjà <br/>";
     } else {
-        echo "\$a n'existe pas <br />";
+        echo  "\$a n'existe pas <br />";
     }
 
     if (empty($a)) {
@@ -127,8 +127,8 @@
 
     echo "Adresse IP du client : <b>" . $ip . "</b><br/> Avec le navigateur : <b>" . $nv . "</b>";
 
-    echo "<br>"
-    echo "<br>"
+    echo "<br>";
+    echo "<br>";
  $valeur = " montre moi ça ";
  echo trim($valeur, "o");
      ?>

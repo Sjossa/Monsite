@@ -50,6 +50,78 @@
     Le fichier PHP contiendra donc uniquement la classe ainsi que ses attributs et ses méthodes.
     Ce fichier pourra alors être appelé partout dans notre site ou application, notamment grâce aux inclusions de fichiers que nous avons apprises jusqu'ici.
 
+Syntaxe :
+
+class MaClasse {
+
+}
+
+Les différentes visibilités d'une propriété :
+** La visibilité publique
+Une propriété de visibilité publique peut être appelée de n'importe quel endroit du site. Cela signifie également qu'elle peut être modifiée de n'importe quel endroit du site.
+Sa syntaxe : public $_propriete;
+
+** La propriété de visibilité privée
+Une propriété de visibilité privée ne peut être appelée que depuis la classe. Cela signifie également qu'elle pourra être modifiée uniquement à partir de la classe.
+Sa syntaxe : private $_propriete;
+
+** La propriété de visibilité protégée
+Une propriété de visibilité protégée ne peut être appelée que depuis la classe parent, mais aussi depuis une ou des classes enfants. Cela signifie qu'elle ne pourra être modifiée qu'à partir de la classe parent ou des classes enfants.
+Sa syntaxe : protected $_propriete;
+
+** Les accesseurs et les mutateurs **
+
+-- Les mutateurs
+
+Un mutateur (ou un setter) permet d'affecter une valeur à une propriété d'un objet. Grâce aux mutateurs, nous allons pouvoir affecter n'importe quelle valeur à notre propriété lors et après la création d'un nouvel objet.
+
+-- Créer un mutateur
+La création d'un mutateur se fera donc au travers d'une méthode. Le mutateur portera la mention "set", comme setter. Ensuite, nous lui donnerons le nom de la propriété qu'il devra affecter d'une nouvelle valeur.
+Syntaxe :
+public function setPrenom($prenom){
+  $this->prenom = $prenom;
+}
+
+setPrenom() est une méthode de type mutateur et de visibilité publique. Elle possède un paramètre $prenom. Ce paramètre est directement affecté à l'attribut $prenom grâce aux commandes $this->prenom.
+
+Grâce à cette méthode à laquelle nous passons la variable $prenom, nous pouvons affecter un prénom à chaque personne que nous créerons avec la table Pers (ou Personne).
+
+-- Accéder à un mutateur
+
+L'accès à un mutateur se fait comme nous l'avons vu dans l'exemple de la classe Pers, c'est-à-dire avec l'aide du caractère "->":
+$Emi = new Pers();
+$Emi->setPrenom('Pierre'); 
+Nous accédons à la méthode setPrenom en lui affectant l'argument 'Pierre'.
+
+En résumé, grâce aux mutateurs, nous avons pu modifier la valeur de la propriété privée (private), en lui affectant une valeur de notre choix
+
+***** Les accesseurs
+Un accesseur (ou getter) permet d'afficher le contenu d'une propriété. Il s'agit d'une méthode, au même titre que le setter.
+
+Créer un accesseur
+La création d'un accesseur se fera donc au travers d'une méthode. L'accesseur portera la mention "get", comme getter. Ensuite, nous donnerons le nom de la propriété dont il affichera la valeur.
+syntaxe :
+public function getPrenom() {
+  return $this->prenom;
+}
+NB : getPrenom() est une méthode accesseur et de visibilité publique. Elle est relativement simple puisqu'elle se contente de retourner la valeur du paramètre $prenom. Grâce à la méthode getPrenom(), nous récupérons le contenu de la propriété $prenom.
+
+-- Accéder à un accesseur
+
+L'accès à un accesseur se fait avec l'aide du caractère "->":
+$Emi = new Pers;
+$Emi->setPrenom('Pierre');
+echo $Emi->getPrenom();
+Sur la dernière ligne, nous accédons à la méthode getPrenom afin de récupérer la valeur de l'attribut $prenom.
+
+En résumé, grâce à l'accesseur, nous avons pu accéder à la valeur de l'attribut privé $prenom.
+
+Conclusion
+Un mutateur permet de modifier la valeur d'une propriété. Alors qu'un accesseur permet d'en récupérer son contenu.
+
+
+
+
 
 
 
