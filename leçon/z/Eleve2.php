@@ -1,4 +1,4 @@
-<?PHP 
+<?php
 // 20/11/23
 class Eleve2 {
    
@@ -6,7 +6,10 @@ class Eleve2 {
 
    // Constructeur
    public function __construct() {
-       $this->_dateInscription = date('d/m/Y');
+       $this->_dateInscription = date('d/m/Y H:i:s');
+       $fuseau = date_default_timezone_get();
+ 
+       setlocale(LC_TIME, "french");
    }
 
    public function setPrenom($prenom) {

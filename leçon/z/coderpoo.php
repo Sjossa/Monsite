@@ -291,7 +291,7 @@ public function __construct() {
 
    <?php
 
-   class Eleve {
+   class Eleve2 {
    
        private $_prenom;
    
@@ -318,6 +318,78 @@ echo " cette eleve a été inscrit le " .$eleve1->dateInscription;
 /* conclusion nous venons créer une méthode constructeur qui nous permet  de pouvoir  obtenir  des valeur au moment que la création d'un nouvel objet */
 
 //20.11.23
+
+<?php
+
+/* Les constantes
+
+Principe d'une constante
+
+Une constante de classe sera toujours attachée à la classe.
+Elle ne sera accessible qu'en lecture et donc ne pourra en aucun cas être modifiée, ni de l'intérieur ni de l'extérieur de la classe.
+
+Une constante se définit à l'aide du mot const suivi de son nom écrit en majuscule.
+const NOMDELACONSTANTE.
+
+*/
+/* Création d'une constante
+nous allons prendre le fichier Eleve.class dans l'état suivant, afin de ne pas complexifier l'explication du fonctionnement de la constante.*/
+
+
+class Eleve {
+   
+    private $_prenom;
+
+    // Constructeur
+    public function __construct() {
+        $this->_dateInscription = date('d/m/Y');
+    }
+
+    public function setPrenom($prenom) {
+        $this->_prenom = $prenom;
+    }
+
+    public function getPrenom() {
+        return $this->_prenom;
+    }
+}
+
+/* Nous souhaitons définir une constante pour notre classe.
+Un élément statique, invariable et qui sera toujours ainsi.
+La constante que nous voulons créer sera la chaîne de caractères suivante :
+Eleve de notre Ecole
+
+Syntaxe : const ECOLE = ' élève de notre école';
+NB : Par défaut, une constante est toujours publique, donc on ne précise pas sa visibilité.
+Également, une constante est dite statique (static).
+Pour récupérer sa valeur, nous utiliserons les caractères :: ( double deux-points )*/
+
+
+class Eleve2 {
+    const ECOLE = ' Elève de notre école ';
+    private $_prenom;
+
+    // Constructeur
+    public function __construct() {
+        $this->_dateInscription = date('d/m/Y');
+    }
+
+    public function setPrenom($prenom) {
+        $this->_prenom = $prenom;
+    }
+
+    public function getPrenom() {
+        return $this->_prenom;
+    }
+}
+
+//partie 2
+/* resumé : apres avoir aprris a créeer une constanste, nous apouvobns retenir qu'ne constante de classe toujours acceible en lecture seule et sera appelés via les caractéres :: (doubles deux points).*/
+
+
+
+?>
+
 
 
 
