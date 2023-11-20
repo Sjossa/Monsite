@@ -251,7 +251,89 @@ $eleveN2->setAge(22);
 // Affichage des informations
 echo $eleveN1->getPrenom() . '<br />'; // Utilisation de la méthode getPrenom
 echo $eleveN2->getPrenom() . ' qui a ' . $eleveN2->getAge() . ' ans';
+
+/* LE CONSTRUCTEUR */
+
+// Principe
+// Le constructeur est ce que l'on appelle en POO une méthode magique. 
+//Son principe est de créer des valeurs par défaut au moment de la création d'un nouvel objet. Le constructeur est donc une méthode. Afin de le différencier d'une méthode dite classique, le constructeur sera déclaré ainsi:
+
+  class Eleve {
+
+    private $_prenom;
+
+    // Constructeur
+    public function __construct($prenom) {
+        $this->_prenom = $prenom;
+    }
+
+    // Méthode pour définir le prénom
+    public function setPrenom($prenom) {
+        $this->_prenom = $prenom;
+    }
+
+    // Méthode pour obtenir le prénom
+    public function getPrenom() {
+        return $this->_prenom;
+    }
+}
+
+
+/*
+Nous souhaitons enrichir notre classe Eleve en récupérant de manière automatique la date d'inscription d'un nouvel élève au moment de sa déclaration lors de l'appel de notre classe Eleve grâce au mot-clé new.*/
+
+public function __construct() {
+    $this->dateInscription = date('d/m/Y');
+}
+
+  /*Notre constructeur a été déclaré avec une visibilité publique afin de pouvoir être invoqué de n'importe quel endroit.
+   Nous définissons l'objet courant grâce à la variable $this en lui affectant la date au moment de l'inscription."*/
+
+   <?php
+
+   class Eleve {
+   
+       private $_prenom;
+   
+       // Constructeur
+       public function __construct() {
+           $this->_dateInscription = date('d/m/Y');
+       }
+   
+       public function setPrenom($prenom) {
+           $this->_prenom = $prenom;
+       }
+   
+       public function getPrenom() {
+           return $this->_prenom;
+       }
+   }
+   
+/*Nous allons à présent créer un nouvel Eleve puis nous irons récupérer sa date d'inscription qui aura été créée de manière automatique par le constructeur.*/
+$eleve1 = new Eleve();
+$eleve1->setPrenom('pîerre');
+echo $eleve1->getPrenom() .'<br />';
+echo " cette eleve a été inscrit le " .$eleve1->dateInscription;
+
+/* conclusion nous venons créer une méthode constructeur qui nous permet  de pouvoir  obtenir  des valeur au moment que la création d'un nouvel objet */
+
+//20.11.23
+
+
+
+
+
+   
+   
+
+
 ?>
+
+
+
+
+
+
    
 </body>
 </html>
