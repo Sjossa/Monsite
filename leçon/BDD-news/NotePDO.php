@@ -48,4 +48,22 @@ $cnx = new PDO($dsn, $user, $password);
     /* Explication : nous initialisons l'objet PDO et nous le stockons dans une variable nommée $cnx. $cnx contient tous les paramètres de connexion à notre base de données.
 
 Conclusion : nous venons de créer un objet PDO pour nous connecter à notre base de données MySQL.*/
+
+/* Gestion d'une erreur eventuel de connexion 
+
+Si pour une raison quelconque , une erreur de connexion a la base de donnée survenais, nous allons gérer cette erreur .
+
+En effet, en cas d'erreur, MYSQL renvoie un message d'erreur, et ce message peut contenir des donnée sensible.
+
+Exemple:
+Nous allons reprendre nos variable de connexion a notre base de donn"e et nous allons modifier  le login de la variable.
+$user et ajouter un mot de passe a notre variable $password, afin de généré une erreur de connexion.
+Puis nous initialisons l'objet POO*/
+
+$dns = "mysql:localhost;dbname=maBase";
+$user = "root";
+$password = "";
+$cnx = new PDO($dsn, $user, $password);
+/* Ensuite nous lançons la page dans la browser.
+Nous nous attendons a une erreur ,puisque le couple user/password n'est pas correct.
 ?>

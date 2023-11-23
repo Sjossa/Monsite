@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <title>Agence Immobilière</title>
+    <style>body {
+        font-family: 'Arial', sans-serif;
+        background-color: #f7f7f7;
+        margin: 0;
+        padding: 0;
+    }
+    
+    h1 {
+        color: #333;
+        text-align: center;
+    }
+    
+    form {
+        max-width: 400px;
+        margin: 20px auto;
+        padding: 20px;
+        background-color: #fff;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+    }
+    
+    input[type="submit"] {
+        width: 100%;
+        padding: 10px;
+        margin-top: 10px;
+        background-color: #4CAF50;
+        color: #fff;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-size: 16px;
+    }
+    
+    input[type="submit"]:hover {
+        background-color: #45a049;
+    }
+    
+    /* Style spécifique pour chaque bouton */
+    input[name="vendre"] {
+        background-color: #3498db;
+    }
+    
+    input[name="acheter"] {
+        background-color: #e74c3c;
+    }
+    
+    input[name="louer"] {
+        background-color: #f39c12;
+    }
+    </style>
+</head>
+<body>
+    <h1>Choisissez une option :</h1>
+    
+    <!-- Formulaire avec trois boutons submit -->
+    <form method="post" action="8.php">
+        <input type="submit" name="vendre" value="Vendre">
+        <input type="submit" name="acheter" value="Acheter">
+        <input type="submit" name="louer" value="Louer">
+    </form>
+</body>
+</html>
