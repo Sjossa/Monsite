@@ -110,6 +110,24 @@ while ($donnes=$rs_req->fetch() ) {
     print_r($donnes);
     echo '</ pre>'; }
 
+/* On obtient chaque ligne de notre table clients, rangée dans un tableau (array), et chaque tableau (array) contient :
+   - Un tableau associatif
+   - Un tableau numérique
+
+Conclure :
+Par défaut, le comportement de PDO est d'envoyer la méthode fetch avec en retour un tableau associatif et un numérique.
+
+L'association PDO :: fetch_assoc
+Nous pouvons modifier ce comportement en précisant le type d'association à utiliser.
+Pour cela, nous allons ajouter a la méthode fetch(), le type d'association que nous souhaitons boir apparaitre.
+Pour faire apparaitre uniquement le résultat sous la forme d'un tableau associatif, nous ecrirons: PDO::FETCH_ASSOC,a la methode fetch(). */
+
+<?PHP
+
+?>
+
+
+
 
 
 

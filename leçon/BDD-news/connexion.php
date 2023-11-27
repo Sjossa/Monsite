@@ -18,7 +18,7 @@ while ($donnes=$rs_req->fetch() ) {
 
 $sql = "select * from clients";
 $rs_req = $cnx->query($sql);
-while($donnes=$rs_req->fetch()) {
+while($donnes=$rs_req->fetch(PDO:: FETCH_NUM)) {
     echo '<pre>';
     print_r($donnes);
     echo '</pre>';
