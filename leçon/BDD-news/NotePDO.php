@@ -117,14 +117,102 @@ while ($donnes=$rs_req->fetch() ) {
 Conclure :
 Par défaut, le comportement de PDO est d'envoyer la méthode fetch avec en retour un tableau associatif et un numérique.
 
-L'association PDO :: fetch_assoc
-Nous pouvons modifier ce comportement en précisant le type d'association à utiliser.
-Pour cela, nous allons ajouter a la méthode fetch(), le type d'association que nous souhaitons boir apparaitre.
-Pour faire apparaitre uniquement le résultat sous la forme d'un tableau associatif, nous ecrirons: PDO::FETCH_ASSOC,a la methode fetch(). */
+L'association PDO::FETCH_ASSOC :
+Nous pouvons modifier ce comportement en précisant le type d'association à utiliser. Pour cela, nous allons ajouter à la méthode fetch() le type d'association que nous souhaitons voir apparaître. Pour faire apparaître uniquement le résultat sous la forme d'un tableau associatif, nous écrirons : PDO::FETCH_ASSOC, à la méthode fetch().
 
-<?PHP
+L'association PDO::FETCH_BOTH :
+Par défaut, la constante utilisée par PDO est PDO::FETCH_BOTH, qui signifie envoyer les deux tableaux (associatif et numérique).
+
+L'association PDO::FETCH_OBJ :
+Une quatrième constante peut être utilisée, PDO::FETCH_OBJ, qui donne en retour un objet. Elle est identique au précédent à la différence de l'ajout du type PDO::FETCH_OBJ à la méthode fetch().*/
+
+
+while ($donnees = $rs_req->fetch(PDO::FETCH_OBJ)) {
+    echo '<pre>';
+    print_r($donnees);
+    echo '</pre>';
+}
+
+    /* Dans la pratique, on utilise le plus souvent les deux types d'association : ASSOC et OBJ.
+
+Gestion des erreurs SQL :
+Comme nous l'avons fait à l'initialisation de l'objet PDO lors de la mise en place de la connexion à notre base de données,nous allons protéger nos requêtes SQL en bloquant le code en cas d'erreur, grâce au couple TRY/CATCH. 
+ Pour cela, nous allons d'abord définir un attribut à notre variable de connexion à la base de données, $cnx, afin de modifier l'affichage des erreurs. Cela donnera :
+$cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+
+
+1)<?php
+/* Les différents types d'affichage des erreurs :
+Il existe trois types d'affichage des erreurs :
+- ERRMODE_SILENT (affichage par défaut)
+- ERRMODE_WARNING
+- ERRMODE_EXCEPTION
+Nous allons voir les trois types d'affichage d'erreurs.
+
+Nous allons provoquer une erreur SQL en faisant une requête non pas dans la table "client" mais dans la table "clients" qui n'existe pas. Notre requête SQL deviendra alors :
+$sql = "SELECT * FROM clients";
+*/
+
+// Premier type d'affichage des erreurs SQL : ERRMODE_SILENT
+try {
+    $cnx = new PDO($dns, $user, $password);
+    $cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_SILENT);
+    /* Défini en mode affichage ERRMODE_SILENT */
+    echo "Tout s'est bien passé";
+} catch (PDOException $e) {
+    echo "Une erreur : " . $e->getMessage();
+}
+
+/* Deuxième type d'affichage des erreurs SQL : ERRMODE_WARNING
+Cela permet d'afficher le détail des erreurs.
+Ce mode peut être opportun en cours de développement afin d'identifier les erreurs éventuelles.
+Notre code ressemblera à ceci : */
+
+try {
+    $cnx = new PDO($dns, $user, $password);
+    $cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_WARNING);
+    echo "Tout s'est bien passé";
+} catch (PDOException $e) {
+    echo "Une erreur : " . $e->getMessage();
+}
+
+/* troisieme type d'affichage des erreur sql :ERRMODE_EXCEPTION
+ERRMODE_EXCEPTION permet d'envoyer une  d'exceptions.
+Cela nous permet donc de récupere cette exception au travers du couple TRY/CATCH et ainsi le message d'erreur qui apparaitra a l'ecran */
+try {
+    $cnx = new PDO($dns, $user, $password);
+        $cnx->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
+        echo "ok"; }
+        catch (PDOException $e) {
+            echo "no". $e->getMessage(); }
+            $sql = "select * from client";// requete fausse
+            /* Ici la requete est executé.
+
+            si elle fonctionne, le script jouera uniquement le TRY.
+             si elle fonctionne pas , le script ira directement jouer CATCH
+             */
+            try {
+                $rs_req = $cnx->query($sql);
+                while($donnees=$rs_req->fetch(PDO::FETCH_OBJ)) {
+                    echo"<PRE>";
+                    print_r($donnees);
+                    echo "<pre>"; }
+                    catch (PDOException $e) {
+                        echo "un probleme"; }
+                        /*Nous venons de voir les basse de la mise ne place PDO.*/
 
 ?>
+
+
+
+
+
+
+
+
+
+
+
 
 
 
