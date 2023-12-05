@@ -29,10 +29,12 @@
     }
 
     // Échappement des données
-    $nom = htmlspecialchars($_POST["nom"]);
-    $prenom = htmlspecialchars($_POST["prenom"]);
+    $nom =($_POST["nom"]);
+    $prenom = ($_POST["prenom"]);
     $email = htmlspecialchars($_POST["email"]);
     $mdp = htmlspecialchars($_POST["mdp"]);
+
+    echo strip_tags($nom);
 
     // Connexion à la base de données
     $dsn = "mysql:host=localhost;dbname=secu_bdd";
@@ -52,7 +54,7 @@
   $stmt = $pdo->prepare($sql);
 $stmt->execute([$nom,$prenom,$mdp,$email ]) ;
 
-echo "Vos données sont enregistrées";
+echo " Vos données sont enregistrées";
 ?>
 </body>
 </html>
