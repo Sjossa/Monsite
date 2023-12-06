@@ -1,4 +1,4 @@
-<!DOCTYPE html>
++<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
@@ -6,7 +6,6 @@
     <title>Document</title>
 </head>
 <body>
-    <div class="content">
 <h1>gestion des images</h1>
 <?php
 /*
@@ -56,29 +55,27 @@ Les scripts de création d'image doivent suivre les étapes suivantes :
 */
 
 
-header("Content-type: image/png"); 
+
 
 // Création du cadre 800*400 pixels
 $id_img = imagecreate(800, 400);
 
 // Création des couleurs
 $fond = imagecolorallocate($id_img, 255, 255, 51);
-$noir = imagecolorallocate($id_img, 0, 0, 0);
+
 
 
 
 // Enregistrement de l'image dans un fichier
 imagepng($id_img, "imagedwwm.png");
 
-// Envoi de l'image au navigateur
-imagepng($id_img);
+
 
 // Libération de l'espace mémoire occupé par l'image
 imagedestroy($id_img);
 
 
 ?>
-    </div>
-    <img src="imagedwwm.png" alt="">
+  <img src="imagedwwm.png" alt="">
 </body>
 </html>
