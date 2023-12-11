@@ -45,6 +45,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     } else {
         // Si les informations d'identification sont incorrectes, définir un message d'erreur
         $erreur = "Email ou mot de passe incorrect.";
+        echo $erreur
     }
 
     // Fermeture de la requête et de la connexion pour libérer les ressources
