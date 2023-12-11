@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/all.min.css">
+    <link rel="stylesheet" href="style.css">
+    <title>Fenêtre modale scroll</title>
+</head>
+<body>
+    <div class="container">
+        <div class="banniere-titre">
+            <h1>SECTION 1</h1>
+        </div>
+    </div>
+    <div class="container part2">
+        <div class="banniere-titre">
+            <h1>SECTION 2</h1>
+        </div>
+    </div>
+    <div class="container part3">
+        <div class="banniere-titre">
+            <h1>SECTION 3</h1>
+        </div>
+    </div>
+
+    <div class="modal-container">
+        <div class="modal-details">
+            <p class="code">50% de promotion sur tout le site</p>
+            <!-- Ce code est visible au click sur le bouton -->
+            <p class="code">Que c'est merveilleux !</p>
+            <!-- Icone pour refermer la modale -->
+            <i class="fas fa-times"></i>
+
+            <!-- Bouton -->
+            <button class="btn-success">OBTENIR LE CODE</button>
+        </div>
+    </div>
+
+   
+    <script>
+        // Je séléctionne et je stocke la DIV modal-container
+        const modal = document.querySelector('.modal-container');
+        console.log(modal);
+        // Je sélectionne le bouton
+        const btn = document.querySelector('.btn-success');
+        console.log(btn);
+        // Je sélectionne le code
+        const code = document.querySelector('.code');
+      console.log(code);
+        // Je sélectionne l'icone
+        const icone = document.querySelector('.fa-times');
+        console.log(icone);
+        window.addEventListener("scroll", displayModal);
+        function displayModal(){
+            console.log('défilement détecté !');
+            let hauteur = document.documentElement.scrollTop;
+            console.log(hauteur, 'nombre de pixels depuis le haut de la page');
+            if(hauteur > 400){
+                console.log('Affichage de la modal');
+                modal.style.display = "flex";
+            }
+        }
+        btn.addEventListener("click", function(){
+            console.log('icone cliquée');
+            // Je rends visible le code
+            code.style.display = "block";
+            // Je rend invisible le bouton
+            btn.style.display = "none";
+        });
+        icone.addEventListener("click", function(){
+            console.log('icone cliquée');
+            // Je rends invisible la DIV modal-container
+            modal.style.display = "none";
+            // J'annule l'évènement
+            window.removeEventListener('scroll', displayModal);
+        });
+    </script>
+    </script>
+</body>
+</html>

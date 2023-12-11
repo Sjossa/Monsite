@@ -1,0 +1,76 @@
+* {
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+}
+
+html {
+    font-size: 62.5%;
+}
+body {
+    font-size: 1.4em;
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+.container {
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    align-items: center;
+    background-color: #1E2337;
+}
+
+.banniere-titre {
+    margin-bottom: 1rem;
+}
+
+.part2 {
+    background-color: orange;
+}
+
+.part3 {
+    background-color: orangered;
+}
+
+/* MODAL */
+
+.modal-container {
+    display: none;
+    height: 100vh;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    left: 0;
+    background-color: rgba(136, 222, 136, .8);
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-details {
+    background-color: white;
+    width: 50%;
+    text-align: center;
+    position: relative;
+    padding: 3rem;
+    color: #1E2337;
+}
+
+.modal-details i {
+    position: absolute;
+    top: -2px;
+    right: -2px;
+    font-size: 2rem;
+}
+
+/* Le bouton */
+
+.btn-success {
+    height: 4rem;
+    background-color: rgb(231, 171, 61);
+    columns: white;
+    padding: 1rem;
+    border: none;
+    width: 100%;
+}
