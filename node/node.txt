@@ -1,0 +1,8 @@
+jusqu’a la nous avons utilisé javascript coté client.
+A partir de maintenant , il sera utilisé coté serveur.
+Si javascript étais initialement conçu pour fonctionner avec des pages web , des outils plus récent on élargi ses capacité.
+Nos js permet ainsi de l’utiliser pour créer des application web complexes.
+
+Fonction d'un serveur 
+ 
+ Comprendre l'architecture client-serveur le terme client désigne tout logiciel capable d'envoyer des requêtes
