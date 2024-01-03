@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <!--- Fonction go -->
+    <form action="">
+        <input type="text" name="" id="Monchamp">
+        <button onclick="go()">Cliquez ici</button>
+    </form>
+    <br>
+
+    <script>
+        // Récupérer la valeur entrée dans un champ de saisie
+        function go() {
+            let saisie = document.getElementById("Monchamp");
+            alert(saisie.value);
+        }
+    </script>
+
+    <!-- Fonction off -->
+
+    <button id="a" onclick="off()">A</button>
+    <button id="b">B</button>
+
+    <script>
+        // Désactiver un élément HTML à l'aide de JS
+        function off() {
+            var cibleA = document.getElementById("a");
+            var cibleB = document.getElementById("b");
+            cibleA.setAttribute("disabled", true);
+            cibleB.setAttribute("disabled", true);
+        }
+    </script>
+
+    <br>
+    
+    <!-- Fonction reveler -->
+    Êtes-vous majeur ? 
+    <br>
+    <button id="c" onclick="reveler()">Oui</button>
+    <button id="d" onclick="cacher()">Non</button>
+    <button id="e" hidden>Continuer</button>
+    <p id="julie" hidden>Julie/claire</p>
+
+    <script>
+        // Supprimer un attribut HTML en JS
+        function reveler() {
+            var cibleE = document.getElementById("e");
+            var cibleJulie = document.getElementById("julie");
+            cibleE.removeAttribute("hidden");
+            cibleJulie.removeAttribute("hidden");
+
+          
+        }
+        function cacher(){
+                var cibleE = document.getElementById("e");
+            cibleE.setAttribute("hidden","true");
+            }
+  
+    </script>
+</body>
+</html>

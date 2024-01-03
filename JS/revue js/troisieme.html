@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p id="2"></p>
+    <script>
+        //créer un objet simple
+    /* JavaScript peut manipuler le DOM pour lire le contenu d'une page HTML, mais aussi pour le modifier. 
+        Le langage permet d'ajouter, changer ou supprimer des éléments HTML. 
+
+        La manière la plus basique de le faire est d'utiliser document.write(), dont le paramètre est du code HTML.
+
+         Lorsque cette instruction est exécutée, elle ajoute du code à la page web. 
+
+         Toutefois, cette instruction est assez sommaire et écrase tout le contenu présent sur une page avant son exécution.
+
+Le DOM offre heureusement des outils plus élaborés pour créer ou supprimer des balises HTML.
+
+Ils sont toutefois plus complexes à utiliser que document.write().
+
+Le DOM représente une page web sous la forme d'un arbre. 
+
+Chaque élément d'une page est un nœud (node en anglais). 
+
+Les nœuds sont liés les uns aux autres par une relation hiérarchique.
+ À l'exception de la racine, chaque nœud a un unique nœud parent. 
+ Les nœuds <p> et <img> dépendent ainsi du nœud <body>. Ce sont des nœuds enfants.
+
+Les attributs et informations contenues dans chaque nœud sont manipulables par JavaScript. 
+Ainsi, la méthode getElementById() accède au contenu du nœud dont l'ID lui est passé en paramètre.
+
+JavaScript procède en trois étapes pour ajouter un nœud dans le DOM. Le nœud est créé à l'aide de la méthode document.createElement(). 
+Cette méthode prend pour paramètre le nom de la balise à ajouter, comme img ou a. 
+Ensuite, il est possible de préciser les paramètres de l'élément à l'aide de la méthode setAttribute(). 
+Elle prend deux paramètres :
+
+le nom de l'attribut et sa valeur.
+Ces commande permettent de créer un noeud mais ne l’intègre pas a la plage.
+
+L'ajout se fait a l'aide de la méthode appenChild().
+Cette méthode permet  d'ajouter le noeud crée en tant qye noeud enfant d'un element deja existant dans la page
+        *//*
+        document.write( p>un chiens</p>);
+        document.write(<p>un chats</p>);*/
+    </script>
+<script>
+    function image(){
+        var noeud = document.createElement("img");
+        noeud.setAttribute("src", "jojo.jpg");
+        document.body.appendChild(noeud);
+    }
+</script>
+    <button onclick="image()">aa</button>
+    <!--
+        Un element html utile lors de la manipulation du DOM est la balise <div>. 
+            Cette derniere n'est aps visible  par les internautes.
+            son role est de delemiter des elemnt  d'une page web.
+             Elle put etre utulisé avec la methode appendChil() pour inserer un oeud a u nendroit precis
+    -->
+    <script>
+        function image2(){
+            var noeud2 = document.createElement("img");
+            noeud2.setAttribute("src", "jojo.jpg");
+
+            var divCible = document.getElementById("cible");
+            divCible.appendChild(noeud2);
+        }
+    </script>
+ <p>Paragraphe a</p>
+ <div id="cible"></div>
+ <p>Paragraphe b</p>
+ <button onclick="image2()">Ajouter une image</button>
+
+<!--
+    Suprimer une balise d'une page
+    Javascript permet enfin de retire des noeuds du DOM, ce qui a pour effet d'effacer des element HTML d'une page.
+    La methode la plus simple pour y parvenir est removeChild().
+    Son parametre est le noeud qui doit etre suprimé.
+    Elle est utulisée depuis le noeud parent, ce qui neccesite de l'identifier auparavant avec la methode get ElementbyID().
+
+-->
+
+<script>
+    function suppr(){
+        var noeudParent = document.getElementById("parent");
+        var noeudEnfant = document.getElementById("enfant");
+        noeudParent.removeChild(noeudEnfant);
+    }
+</script>
+
+<div id="parent">
+    <img src="jojo.jpg" alt="" id="enfant">
+</div>
+<button onclick="suppr()">Supprimer</button>
+</body>
+</html>

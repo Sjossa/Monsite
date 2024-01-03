@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        // Obtenir la date actuelle
+        var ajd = new Date();
+        alert(ajd);
+        console.log(ajd);
+    </script>
+
+    <script>
+        // Calculer la différence entre deux dates
+        var ajd1 = new Date();
+        var date = new Date(2001, 1, 12);
+        var differenceEnMillisecondes = ajd1 - date;
+        var differenceEnAnnees = differenceEnMillisecondes / (1000 * 60 * 60 * 24 * 30 * 12);
+
+        alert("Différence en années : " + differenceEnAnnees);
+        console.log("Différence en années : " + differenceEnAnnees);
+    </script>
+
+    <script>
+        // Test de condition simple
+        var x = -5;
+        if (x >= 0) {
+            alert("x est positif");
+        } else {
+            alert("x est négatif");
+        }
+    </script>
+
+    <script>
+        // Test de condition avec intervalle
+        var z = 10;
+        if (z >= 0 && z <= 5) {
+            alert(z + " est compris entre 0 et 5");
+            console.log(z + " est compris entre 0 et 5");
+        }
+    </script>
+
+    <script>
+        var d = 0;
+        switch(d) {
+            case 0: 
+                alert("la variable vaut zéro");
+                break;
+            case 1: 
+                alert("la variable vaut un");
+                break;
+            default:
+                alert("la variable ne vaut ni zéro ni un");
+        }
+    </script>
+
+    <script>
+        var figure = "rectangle";
+        switch(figure) {
+            case "triangle": 
+                alert("figure 3 côtés");
+                break;
+            case "carré": 
+                alert("figure 4 côtés");
+                break;
+            case "pentagone": 
+                alert("cette figure a cinq côtés");
+                break;
+            default:
+                alert("je ne connais pas cette figure");
+        }
+    </script>
+</body>
+</html>
+

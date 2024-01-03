@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Les objets</title>
+</head>
+<body>
+    <!--
+        JavaScript fait un usage intensif du concept d'objet. 
+        Il appartient ainsi à la famille des langages de programmation
+        orienté objet appelé POO (Programmation Orientée Objet).
+        Ce concept s'oppose à celui de la programmation procédurale.
+        L'unité de base de JS est l'objet, et pratiquement tout élément JS est un objet.
+        
+        Au premier abord, les objets en JS sont similaires aux variables. 
+        Ils contiennent eux aussi des données. 
+        À la différence des variables ordinaires, ils peuvent cependant contenir plusieurs valeurs simultanément. 
+        Les valeurs contenues dans un objet sont alors appelées ses propriétés.
+    -->
+    <script>
+      /*  var eleve = {
+            prenom: "Sylvain",
+            mail: "sylvain@gmail.com",
+            moyenne: 15
+        };
+        /*
+        Ici, nous avons créé un objet qui représente un élève. Ce dernier a un prénom, une adresse mail et une moyenne.
+        La création d'un objet nous permet de structurer ces informations de manière cohérente et claire.
+        Créer un tableau ou trois variables aurait été nettement moins pratique à manipuler.
+        Nous avons créé un objet de manière littérale.
+        Pour ce faire, nous avons utilisé des règles syntaxiques
+        légèrement différentes de celles de JavaScript. Ces dernières portent le nom de JavaScript Object Notation ou JSON.
+        Ainsi, les valeurs de propriété sont assignées à l'aide de l'opérateur ":" et sont placées entre une paire d'accolades. 
+        Ici, les deux premières propriétés contiennent des chaînes de texte, mais il est également possible d'entrer des valeurs, 
+        comme c'est le cas avec la moyenne.
+
+        Cette manière de créer un objet est pratique mais limitée. 
+        Elle permet en effet de ne créer qu'un seul objet à la fois.
+        Lorsqu'il est souhaitable de créer plusieurs objets qui suivent une même structure, le développeur crée d'abord un constructeur 
+        qui sera appelé autant de fois que nécessaire. 
+        Les objets créés à l'aide d'un constructeur portent le nom d'instance.
+    </script>
+
+    <script>
+       /* function Eleve(prenom, mail, moyenne) {
+            this.prenom = prenom;
+            this.mail = mail;
+            this.moyenne = moyenne;
+        }
+        var eleve1 = new Eleve("Bob", "bob@gmail.com", 10);
+        var eleve2 = new Eleve("Elise", "elise@gmail.com", 15);
+
+        /*En JavaScript, un constructeur est une fonction. 
+        Les propriétés de l'objet créé sont placées dans la fonction et sont précédées du mot-clé this.
+        Ce dernier (this) indique la présence d'une propriété en les distinguant, par exemple, d'une variable.
+        La création d'une instance se fait par l'appel de la fonction précédée du mot-clé new.
+        L'utilisation d'un constructeur permet au développeur de réutiliser les modèles des objets qu'il crée. 
+        Il peut être intéressant de noter qu'en JS, le constructeur d'un objet est une propriété de ce dernier, 
+        nommé constructor. Ici, le constructeur est utilisé pour créer deux instances de l'objet Eleve.
+        */
+
+        /* manipuler les propriétés d'un objet */
+       /* alert(eleve1.prenom);
+        eleve1.prenom = "Paul";
+       
+        eleve2.moyenne += 2;
+        alert(eleve2.moyenne);*/
+
+        /* 
+        La manière la plus usuelle d'accéder à une propriété d'un objet est d'utiliser un point.
+        Ce dernier est alors suivi du nom de la propriété à manipuler. 
+        Il n'est possible de ne traiter  qu'une propriété à la fois. 
+        Cette dernière s'utilise comme une variable ordinaire.
+        Il est aussi possible de placer le nom de la propriété que l'on souhaite manipuler entre crochets. 
+        Cette manière de faire est similaire à une utilisation d'un tableau.
+        Les objets complexes peuvent contenir des sous-propriétés.
+        */
+    </script>
+    <!-- un objet avec une méthode -->
+    <script>
+
+        function Etudiant(prenom_, mail_, moyenne_) {
+            this.prenom_ = prenom_;
+            this.mail_ = mail_;
+            this.moyenne_ = moyenne_;
+            this.saluer = 
+                console.log("Je m'appelle " + this.prenom_);
+            };
+        
+
+        var etudiant1 = new Etudiant("Pierre", "pierre@coco.com", 20);
+        etudiant1.saluer();
+        alert(etudiant1.saluer());
+    </script>
+</body>
+</html>
+
